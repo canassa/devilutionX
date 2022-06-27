@@ -3729,7 +3729,7 @@ void InitMonsterGFX(int monst)
 		MissileSpriteData[MFILE_FIREPLAR].LoadGFX();
 }
 
-void monster_some_crypt()
+void WeakenNaKrul()
 {
 	if (currlevel != 24 || UberDiabloMonsterIndex < 0 || UberDiabloMonsterIndex >= ActiveMonsterCount)
 		return;
