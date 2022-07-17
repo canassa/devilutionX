@@ -2896,10 +2896,10 @@ void MI_Fireball(Missile &missile)
 		int minDam = missile._midam;
 		int maxDam = missile._midam;
 
-		if (missile._micaster != TARGET_MONSTERS) {
-			auto &monster = Monsters[missile._misource];
-			minDam = monster.minDamage;
-			maxDam = monster.maxDamage;
+		Monster *monster = missile.sourceMonster();
+		if (monster != nullptr) {
+			minDam = monster->minDamage;
+			maxDam = monster->maxDamage;
 		}
 		MoveMissileAndCheckMissileCol(missile, minDam, maxDam, true, false);
 		if (missile._mirange == 0) {
